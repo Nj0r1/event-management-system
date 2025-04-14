@@ -1,0 +1,33 @@
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 60px; /* Matches header height */
+  bottom: 50px; /* Matches footer height */
+  left: 0;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #212529, #343a40);
+  border-right: 1px solid #495057;
+  z-index: 999; /* Below header/footer but above content */
+}
+.sidebar-header {
+  border-bottom: 1px solid #495057;
+}
+.nav-link {
+  color: #e9ecef;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+  background-color: #495057;
+  color: #3498db;
+}
+.nav-link i {
+  color: #3498db;
+  width: 20px;
+  text-align: center;
+}
+.sidebar-header a:hover {
+  color: #d1e7ff;
+}

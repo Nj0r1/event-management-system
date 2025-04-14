@@ -1,0 +1,23 @@
+.card-header {
+    border-bottom: 2px solid #e9ecef;
+  }
+  
+  .card-body p {
+    font-size: 1.1rem;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+  
+  .badge {
+    font-size: 1rem;
+    border-radius: 6px;
+  }

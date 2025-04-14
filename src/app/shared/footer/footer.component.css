@@ -1,0 +1,27 @@
+footer {
+    background: linear-gradient(180deg, #212529, #343a40);
+    border-top: 1px solid #495057;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 1000;
+  }
+  
+  .hover-effect {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    color: #3498db !important;
+    transform: translateY(-2px);
+  }
+  
+  .fs-6 {
+    font-size: 0.95rem;
+  }
+  
+  .text-primary {
+    color: #3498db !important;
+  }

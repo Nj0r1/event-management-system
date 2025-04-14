@@ -1,0 +1,20 @@
+.list-group-item {
+    transition: background-color 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .btn-primary, .btn-secondary {
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }

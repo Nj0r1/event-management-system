@@ -1,0 +1,29 @@
+.btn-primary {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border: none;
+  }
+  
+  .btn-primary:hover, .hover-effect:hover {
+    background: linear-gradient(90deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #3498db;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+  
+  .invalid-feedback {
+    font-size: 0.9rem;
+  }

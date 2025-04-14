@@ -1,0 +1,41 @@
+header {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+  }
+  
+  .navbar-brand:hover {
+    color: #e9ecef !important;
+  }
+  
+  .hover-effect {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    color: #d1e7ff !important;
+    transform: translateY(-2px);
+  }
+  
+  .dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+  }
+  
+  .btn-outline-light {
+    border-color: #e9ecef;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+  }

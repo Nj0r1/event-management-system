@@ -1,0 +1,67 @@
+<!-- Card with shadow, rounded corners, and fade-in animation -->
+<div class="card shadow rounded-3 animate__animated animate__fadeIn">
+  <!-- Header with primary blue background and white text -->
+  <div class="card-header bg-primary text-white p-3">
+    <h2 class="mb-0">Register Attendee</h2>
+  </div>
+  <!-- Card body with increased padding -->
+  <div class="card-body p-4">
+    <form (ngSubmit)="onSubmit()">
+      <!-- Full Name field -->
+      <div class="mb-4">
+        <label for="fullName" class="form-label fw-medium text-muted">
+          <i class="fas fa-user me-2"></i>Full Name
+        </label>
+        <input
+          [(ngModel)]="attendee.fullName"
+          name="fullName"
+          id="fullName"
+          class="form-control form-control-lg shadow-sm"
+          required
+          placeholder="Enter full name"
+        >
+      </div>
+      <!-- Email field -->
+      <div class="mb-4">
+        <label for="email" class="form-label fw-medium text-muted">
+          <i class="fas fa-envelope me-2"></i>Email
+        </label>
+        <input
+          [(ngModel)]="attendee.email"
+          name="email"
+          id="email"
+          type="email"
+          class="form-control form-control-lg shadow-sm"
+          required
+          placeholder="Enter email"
+        >
+      </div>
+      <!-- Event dropdown -->
+      <div class="mb-4">
+        <label for="eventId" class="form-label fw-medium text-muted">
+          <i class="fas fa-calendar-alt me-2"></i>Event
+        </label>
+        <select
+          [(ngModel)]="attendee.eventId"
+          name="eventId"
+          id="eventId"
+          class="form-select form-select-lg shadow-sm"
+          required
+        >
+          <option value="">Select an event</option>
+          <option *ngFor="let event of events" [ngValue]="event.id">{{ event.name }}</option>
+        </select>
+      </div>
+      <!-- Submit button -->
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg w-100 py-3 shadow-sm hover-effect"
+        [disabled]="!isFormValid()"
+      >
+        <i class="fas fa-user-plus me-2"></i>Register Attendee
+      </button>
+      <!-- Cancel button -->
+      <a routerLink="/attendees" class="btn btn-secondary btn-lg w-100 py-3 mt-3 shadow-sm">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="card shadow-lg rounded-3 animate__animated animate__fadeIn">
+  <div class="card-header bg-primary text-white p-3 d-flex align-items-center">
+    <i class="fas fa-ticket-alt me-2"></i>
+    <h2 class="mb-0">Issue Ticket</h2>
+  </div>
+  <div class="card-body p-4">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="attendeeId" class="form-label fw-medium text-muted">
+          <i class="fas fa-user me-2"></i>Attendee
+        </label>
+        <select
+          [(ngModel)]="ticket.attendeeId"
+          name="attendeeId"
+          id="attendeeId"
+          class="form-select form-select-lg shadow-sm"
+          required
+          [ngClass]="{'is-invalid': !ticket.attendeeId && formSubmitted}"
+        >
+          <option value="">Select an attendee</option>
+          <option *ngFor="let attendee of attendees" [ngValue]="attendee.id">{{ attendee.fullName }}</option>
+        </select>
+        <div class="invalid-feedback">Please select an attendee.</div>
+      </div>
+      <div class="mb-4">
+        <label for="type" class="form-label fw-medium text-muted">
+          <i class="fas fa-tag me-2"></i>Ticket Type
+        </label>
+        <select
+          [(ngModel)]="ticket.type"
+          name="type"
+          id="type"
+          class="form-select form-select-lg shadow-sm"
+          required
+          [ngClass]="{'is-invalid': !ticket.type && formSubmitted}"
+        >
+          <option value="">Select a ticket type</option>
+          <option value="General">General</option>
+          <option value="VIP">VIP</option>
+        </select>
+        <div class="invalid-feedback">Please select a ticket type.</div>
+      </div>
+      <div class="d-flex gap-2">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg shadow-sm hover-effect flex-fill"
+          [disabled]="!isFormValid()"
+        >
+          <i class="fas fa-ticket-alt me-2"></i>Issue Ticket
+        </button>
+        <a routerLink="/tickets" class="btn btn-secondary btn-lg shadow-sm flex-fill">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

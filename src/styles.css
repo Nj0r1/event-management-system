@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+  }
+  .card {
+    border-radius: 10px;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border: none;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #2980b9, #3498db);
+  }
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+  }

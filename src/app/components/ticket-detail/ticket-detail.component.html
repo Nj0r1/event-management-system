@@ -1,0 +1,27 @@
+<div class="card shadow-lg rounded-3 animate__animated animate__fadeIn" *ngIf="ticket">
+  <div class="card-header bg-primary text-white p-3 d-flex align-items-center">
+    <i class="fas fa-ticket-alt me-2"></i>
+    <h2 class="mb-0">Ticket #{{ ticket.id }}</h2>
+  </div>
+  <div class="card-body p-4">
+    <div class="row mb-4">
+      <div class="col-md-4 text-muted fw-medium">
+        <i class="fas fa-user me-2"></i>Attendee:
+      </div>
+      <div class="col-md-8">
+        <p class="mb-0">{{ getAttendeeName(ticket.attendeeId) || 'Unknown Attendee' }}</p>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-md-4 text-muted fw-medium">
+        <i class="fas fa-tag me-2"></i>Type:
+      </div>
+      <div class="col-md-8">
+        <p class="mb-0 badge bg-info text-dark p-2">{{ ticket.type }}</p>
+      </div>
+    </div>
+    <a routerLink="/tickets" class="btn btn-secondary btn-lg shadow-sm">
+      <i class="fas fa-arrow-left me-2"></i>Back to Tickets
+    </a>
+  </div>
+</div>

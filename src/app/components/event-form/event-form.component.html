@@ -1,0 +1,74 @@
+<div class="card shadow-lg rounded-3 animate__animated animate__fadeIn">
+  <div class="card-header bg-primary text-white p-3">
+    <h2 class="mb-0">{{ event.id ? 'Edit' : 'Create' }} Event</h2>
+  </div>
+  <div class="card-body p-4">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="name" class="form-label fw-medium text-muted">
+          <i class="fas fa-calendar-alt me-2"></i>Name
+        </label>
+        <input
+          [(ngModel)]="event.name"
+          name="name"
+          id="name"
+          class="form-control form-control-lg shadow-sm"
+          required
+          placeholder="Enter event name"
+          [ngClass]="{'is-invalid': !event.name && formSubmitted}"
+        >
+      </div>
+      <div class="mb-4">
+        <label for="location" class="form-label fw-medium text-muted">
+          <i class="fas fa-map-marker-alt me-2"></i>Location
+        </label>
+        <input
+          [(ngModel)]="event.location"
+          name="location"
+          id="location"
+          class="form-control form-control-lg shadow-sm"
+          required
+          placeholder="Enter location"
+          [ngClass]="{'is-invalid': !event.location && formSubmitted}"
+        >
+      </div>
+      <div class="mb-4">
+        <label for="date" class="form-label fw-medium text-muted">
+          <i class="fas fa-calendar-day me-2"></i>Date
+        </label>
+        <input
+          [(ngModel)]="event.date"
+          name="date"
+          id="date"
+          type="date"
+          class="form-control form-control-lg shadow-sm"
+          required
+          [ngClass]="{'is-invalid': !event.date && formSubmitted}"
+        >
+      </div>
+      <div class="mb-4">
+        <label for="capacity" class="form-label fw-medium text-muted">
+          <i class="fas fa-users me-2"></i>Capacity
+        </label>
+        <input
+          [(ngModel)]="event.capacity"
+          name="capacity"
+          id="capacity"
+          type="number"
+          class="form-control form-control-lg shadow-sm"
+          required
+          placeholder="Enter capacity"
+          [ngClass]="{'is-invalid': !event.capacity && formSubmitted}"
+        >
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg w-100 py-2 fw-medium shadow-sm hover-effect"
+        [disabled]="!isFormValid()"
+      >
+        <i class="fas fa-save me-2"></i>{{ event.id ? 'Update' : 'Save' }} Event
+      </button>
+      <a routerLink="/events" class="btn btn-secondary btn-lg w-100 py-2 mt-3 shadow-sm">Cancel</a>
+    </form>
+  </div>
+</div>
