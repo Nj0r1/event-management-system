@@ -13,12 +13,36 @@ export const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   { path: 'events', component: EventListComponent },
   { path: 'events/create', component: EventFormComponent },
-  { path: 'events/:id', component: EventDetailComponent },
+  {
+    path: 'events/:id',
+    component: EventDetailComponent,
+    data: {
+      getPrerenderParams: () => {
+        return ['1', '2', '3', '4', '5'].map(id => ({ id }));
+      }
+    }
+  },
   { path: 'events/:id/edit', component: EventFormComponent },
   { path: 'attendees', component: AttendeeListComponent },
   { path: 'attendees/create', component: AttendeeFormComponent },
-  { path: 'attendees/:id', component: AttendeeDetailComponent },
+  {
+    path: 'attendees/:id',
+    component: AttendeeDetailComponent,
+    data: {
+      getPrerenderParams: () => {
+        return ['1', '2', '3', '4', '5'].map(id => ({ id }));
+      }
+    }
+  },
   { path: 'tickets', component: TicketListComponent },
   { path: 'tickets/create', component: TicketFormComponent },
-  { path: 'tickets/:id', component: TicketDetailComponent }
+  {
+    path: 'tickets/:id',
+    component: TicketDetailComponent,
+    data: {
+      getPrerenderParams: () => {
+        return ['1', '2', '3', '4', '5'].map(id => ({ id }));
+      }
+    }
+  }
 ];
